@@ -21,7 +21,7 @@ class SmsController < ApplicationController
         @sms.message=@splitted_msg.last(@splitted_msg.count-2).join(" ")
         @sms.save
     end
-    render :text => "text to render..."
+    render :text => @message||"text to render..."
   end
 
 end

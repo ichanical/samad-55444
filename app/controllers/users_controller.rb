@@ -15,6 +15,6 @@ class UsersController < ApplicationController
   end 
   def show
     @user=User.find(params[:id])
-    @messages=Sms.all(:conditions=>[:to=>@user.mobile])
+    @messages=Sms.where("to = ?",@user.mobile)
   end
 end

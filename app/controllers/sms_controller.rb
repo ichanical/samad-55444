@@ -20,8 +20,8 @@ class SmsController < ApplicationController
         end
     when "send"
         @sms=Sms.new
-        @sms.from=params[:mobile]
-        @sms.to=Digest::MD5.hexdigest(@splitted_msg[1])
+        @sms.from_mobile=params[:mobile]
+        @sms.to_mobile=Digest::MD5.hexdigest(@splitted_msg[1])
 #        Digest::MD5.hexdigest('foobar')
         @sms.message=@splitted_msg.last(@splitted_msg.count-2).join(" ")
         @sms.save

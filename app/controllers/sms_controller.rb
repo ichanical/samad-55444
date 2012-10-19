@@ -7,9 +7,8 @@ class SmsController < ApplicationController
     case @splitted_msg[0].downcase
     when "register"
         pass=rand(100000.999999)
-        user=User.find_by_mobile(:params[:mobile])
-        if user.nil?
-        @user=User.new
+        @user=User.find_by_mobile(params[:mobile])||User.new
+        if @user.new_record?
         @user.mobile=params[:mobile]
         @user.password=pass
         @user.password_confirmation=pass
@@ -17,6 +16,7 @@ class SmsController < ApplicationController
         @message="your password is #{pass}"
         else
          @message="already registered"
+
         end
     when "send"
         @sms=Sms.new

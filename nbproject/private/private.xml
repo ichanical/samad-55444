@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/arun/samad/app/models/sms.rb</file>
+        <file>file:/home/arun/samad/db/migrate/20121016175941_create_users.rb</file>
+        <file>file:/home/arun/samad/db/migrate/20121016180358_create_sms.rb</file>
+        <file>file:/home/arun/samad/db/migrate/20121016180945_create_contactbooks.rb</file>
+        <file>file:/home/arun/samad/app/views/users/new.html.erb</file>
+        <file>file:/home/arun/samad/config/database.yml</file>
+        <file>file:/home/arun/samad/app/controllers/users_controller.rb</file>
+        <file>file:/home/arun/samad/app/views/users/_user.html.erb</file>
+        <file>file:/home/arun/samad/config/routes.rb</file>
+        <file>file:/home/arun/samad/app/controllers/sms_controller.rb</file>
+    </open-files>
+</project-private>

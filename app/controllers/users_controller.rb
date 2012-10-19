@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   def create  
     @user = User.new(params[:user])
-  
+    @user.mobile= Digest::MD5.hexdigest(params[:user][:mobile])
     if @user.save  
       #   flash[:notice] = "Registration successful. check email for activation" 
 #      redirect_to new_restaurant_path and return

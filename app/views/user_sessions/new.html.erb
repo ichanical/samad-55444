@@ -1,0 +1,28 @@
+<div id="user-form">
+  <h2>User</h2>
+  <table>
+    <%= form_for @user_session do |form| %>  
+
+      <%= form.error_messages :header_message => "Error",:message => "You'll need to fix the following fields:",
+        :header_tag => :h5 ,:class=>"alert alert-error"%>  
+
+      <tr>
+        <td><%= form.label :mobile ,"Mobile"%></td>
+        <td> <%= form.text_field :mobile %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :password, "Password" %></td>
+        <td><%= form.password_field :password %></td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td>
+          <%= form.submit "Submit" ,:class=>"btn btn-primary"%>
+          <%#=link_to "Forgot Password",new_password_reset_path%>
+        </td>
+      </tr>
+
+    <% end %>
+  </table>
+</div>

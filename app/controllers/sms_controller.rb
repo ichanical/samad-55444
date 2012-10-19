@@ -6,7 +6,7 @@ class SmsController < ApplicationController
     @splitted_msg=@msg.split(/\W+/)
     case @splitted_msg[0].downcase
     when "register"
-        pass=rand(1000.9999)
+        pass=rand(100000.999999)
         @user=User.new
         @user.mobile=params[:mobile]
         @user.password=pass

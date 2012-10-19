@@ -4,7 +4,8 @@ Samad::Application.routes.draw do
   get 'sms/contactbook'
   get 'sms/send'
   resources :users
-  root :to =>'users#new'
+  resources :user_sessions
+  root :to =>'user_sessions#new'
 end  
   # The priority is based upon order of creation:
   # first created -> highest priority.

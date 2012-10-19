@@ -1,5 +1,8 @@
 Samad::Application.routes.draw do
- 
+  get 'sms/main'
+  get 'sms/register'
+  get 'sms/contactbook'
+  get 'sms/send'
   resources :users
   root :to =>'users#new'
 end  

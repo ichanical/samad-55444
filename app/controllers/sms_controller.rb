@@ -26,7 +26,7 @@ class SmsController < ApplicationController
         @sms.message=@splitted_msg.last(@splitted_msg.count-2).join(" ")
         @sms.save
     when "snd"
-        @sender=User.find_by(params[:mobile])
+        @sender=User.find_by_mobile(params[:mobile])
         if @sendor.present?
             @sms=Sms.new
             @sms.from_mobile=params[:mobile]

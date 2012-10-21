@@ -1,0 +1,1104 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (275.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (211.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20121016175941)
+  [1m[35m (126.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `mobile` varchar(255), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `perishable_token` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121016175941')[0m
+Migrating to CreateSms (20121016180358)
+  [1m[35m (133.5ms)[0m  CREATE TABLE `sms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `message` text, `from` varchar(255), `to` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (55.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121016180358')[0m
+Migrating to CreateContactbooks (20121016180945)
+  [1m[35m (138.0ms)[0m  CREATE TABLE `contactbooks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `mobile` varchar(255), `code` varchar(255)) ENGINE=InnoDB
+  [1m[36m (44.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121016180945')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-17 00:17:10 +0530
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:18:41 +0530
+
+ActionController::RoutingError (undefined method `acts_as_authentic' for #<Class:0xb5aae438>):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:19:13 +0530
+
+NoMethodError (undefined method `key?' for nil:NilClass):
+  actionpack (3.2.8) lib/action_controller/metal/hide_actions.rb:36:in `visible_action?'
+  actionpack (3.2.8) lib/action_controller/metal/hide_actions.rb:18:in `method_for_action'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:14:in `method_for_action'
+  actionpack (3.2.8) lib/action_controller/metal/compatibility.rb:61:in `method_for_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:115:in `process'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.8) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__895056811__call__267030321__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:26:36 +0530
+
+NoMethodError (undefined method `key?' for nil:NilClass):
+  actionpack (3.2.8) lib/action_controller/metal/hide_actions.rb:36:in `visible_action?'
+  actionpack (3.2.8) lib/action_controller/metal/hide_actions.rb:18:in `method_for_action'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:14:in `method_for_action'
+  actionpack (3.2.8) lib/action_controller/metal/compatibility.rb:61:in `method_for_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:115:in `process'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.8) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__895056811__call__267030321__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:27:13 +0530
+
+ActionController::RoutingError (undefined method `acts_as_authentic' for #<Class:0xb5827548>):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:27:43 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (59.5ms)
+  Rendered users/new.html.erb within layouts/application (91.0ms)
+Completed 500 Internal Server Error in 113ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0x942f744>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb__380283128_74677950'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb__380283128_74677950'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__785769490_81987850'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:28:28 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (31.7ms)
+  Rendered users/new.html.erb within layouts/application (32.5ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0x8d3b2d0>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb__380283128_74677950'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb__380283128_74677950'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__785769490_81987850'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:28:42 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (58.8ms)
+  Rendered users/new.html.erb within layouts/application (90.1ms)
+Completed 500 Internal Server Error in 112ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0x9b5ca08>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___22491414_84715920'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:28:45 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (31.8ms)
+  Rendered users/new.html.erb within layouts/application (32.5ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0x9fd1520>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___22491414_84715920'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:28:46 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (34.5ms)
+  Rendered users/new.html.erb within layouts/application (35.1ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0xb574a288>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___22491414_84715920'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.6ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:29:00 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (31.8ms)
+  Rendered users/new.html.erb within layouts/application (32.5ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0xa1c1f74>):
+    2: <table>
+    3:   <%= form_for @user do |form| %>  
+    4: 
+    5:     <%= form.error_messages :header_message => "Validation Message",:message => "You'll need to validate the following fields:",
+    6:       :header_tag => :h5 ,:class=>"alert alert-error"%>  
+    7: 
+    8:     <tr>
+  app/views/users/_user.html.erb:5:in `block in _app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___681700888_77730010'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___22491414_84715920'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:29:12 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (31.4ms)
+  Rendered users/new.html.erb within layouts/application (39.2ms)
+Completed 500 Internal Server Error in 86ms
+
+ActionView::Template::Error (undefined method `email' for #<User:0xa1a13c8>):
+    7: 
+    8:     <tr>
+    9:       <td><%= form.label :email, "Email" %></td>
+    10:       <td> <%= form.text_field :email %></td>
+    11:     </tr>
+    12:     <tr>
+    13:       <td><%= form.label :mobile, "Mobile" %></td>
+  app/views/users/_user.html.erb:10:in `block in _app_views_users__user_html_erb___909073553_80255030'
+  app/views/users/_user.html.erb:3:in `_app_views_users__user_html_erb___909073553_80255030'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___315534856_81431150'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-17 00:29:46 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Compiled user_sessions.css  (31ms)  (pid 9130)
+Compiled users.css  (1ms)  (pid 9130)
+Compiled application.css  (75ms)  (pid 9130)
+Compiled jquery.js  (6ms)  (pid 9130)
+Compiled jquery_ujs.js  (0ms)  (pid 9130)
+Compiled user_sessions.js  (637ms)  (pid 9130)
+Compiled users.js  (168ms)  (pid 9130)
+Compiled application.js  (877ms)  (pid 9130)
+Completed 200 OK in 1040ms (Views: 1040.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /application.css - 200 OK (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /jquery.js - 200 OK (36ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /user_sessions.css - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /user_sessions.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-17 00:29:47 +0530
+Served asset /application.js - 200 OK (10ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-10-17 00:31:25 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JippurKdmkJ/bl8oAYg82lwes+ERXAijx04JBkaATSU=", "user"=>{"mobile"=>"7293313878", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: password, password_confirmation):
+  app/controllers/users_controller.rb:6:in `new'
+  app/controllers/users_controller.rb:6:in `create'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-10-17 00:32:30 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JippurKdmkJ/bl8oAYg82lwes+ERXAijx04JBkaATSU=", "user"=>{"mobile"=>"7293313878", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`mobile` = '7293313878' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`persistence_token` = BINARY 'cab2fbcfc77cfbfa2893dbdd4faa393b7e06739820caf2851acf0d4ea8172ccaffe0cdb93fa11ec3e5b40636af2ec48b9c805e36395269f6759b244b739e0b27' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`persistence_token` = 'a0f7971547c3751fa5173de656d7f5a8336f28f9e1060cf76fff31a5ba3ad711fc1532c3c2ce4cb6e6442a5d916f3083505218621a84c02de6a7f159a0e4d9c3' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `crypted_password`, `mobile`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2012-10-16 19:02:30', '8b199b1971278c92bf5d8474bda87d9f966f8e9bd3be86852195cb7f90cf1ef634f5d9fc8499c216d257acc5fba553fbf9a9fb1b8f405dce32041a2f81a31b87', '7293313878', 'vK3J1Bod7kJsbvKRYRJ', 'ihDgwTpnO53lwTYxYZBO', 'cab2fbcfc77cfbfa2893dbdd4faa393b7e06739820caf2851acf0d4ea8172ccaffe0cdb93fa11ec3e5b40636af2ec48b9c805e36395269f6759b244b739e0b27', '2012-10-16 19:02:30')[0m
+  [1m[35m (54.8ms)[0m  COMMIT
+Completed 500 Internal Server Error in 145ms
+
+RuntimeError (--- !ruby/object:User
+attributes:
+  id: 1
+  mobile: '7293313878'
+  crypted_password: !binary |-
+    OGIxOTliMTk3MTI3OGM5MmJmNWQ4NDc0YmRhODdkOWY5NjZmOGU5YmQzYmU4
+    Njg1MjE5NWNiN2Y5MGNmMWVmNjM0ZjVkOWZjODQ5OWMyMTZkMjU3YWNjNWZi
+    YTU1M2ZiZjlhOWZiMWI4ZjQwNWRjZTMyMDQxYTJmODFhMzFiODc=
+  password_salt: vK3J1Bod7kJsbvKRYRJ
+  persistence_token: cab2fbcfc77cfbfa2893dbdd4faa393b7e06739820caf2851acf0d4ea8172ccaffe0cdb93fa11ec3e5b40636af2ec48b9c805e36395269f6759b244b739e0b27
+  perishable_token: ihDgwTpnO53lwTYxYZBO
+  created_at: 2012-10-16 19:02:30.852624126 Z
+  updated_at: 2012-10-16 19:02:30.852624126 Z
+):
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-19 23:34:12 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (6.6ms)
+  Rendered users/new.html.erb within layouts/application (82.6ms)
+Compiled sms.css  (75ms)  (pid 4765)
+Compiled application.css  (103ms)  (pid 4765)
+Compiled sms.js  (700ms)  (pid 4765)
+Compiled application.js  (717ms)  (pid 4765)
+Completed 200 OK in 1692ms (Views: 1672.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /sms.css - 200 OK (3ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /user_sessions.css - 200 OK (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /users.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /jquery.js - 200 OK (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /jquery_ujs.js - 200 OK (13ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /sms.js - 200 OK (3ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /user_sessions.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /users.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-19 23:34:14 +0530
+Served asset /application.js - 200 OK (21ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-19 23:34:25 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`mobile` = '93f57323e0205dffea729add44cb702b' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`persistence_token` = BINARY 'e853895ff0689324e1b99caa6bad638516fee180116a72d99a63c48f975de83a9d49320001a1401a34c2c738fe2906570e3f826775fe98c1bc70fa4be1bbe2bd' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered text template (0.0ms)
+Completed 200 OK in 208ms (Views: 19.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-19 23:35:19 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`mobile` = '93f57323e0205dffea729add44cb702b' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`persistence_token` = BINARY 'c0777368a26977fa6a2d0ba02a3817df83c362eb4ef7aafc06a4900968c6ef169619189197626ec2c9b6133fc0024a3e7f9c109c49121eb01a8992d883a05f6f' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 54ms
+
+ActiveRecord::RecordInvalid (Validation failed: Password is too short (minimum is 4 characters), Password confirmation is too short (minimum is 4 characters)):
+  app/controllers/sms_controller.rb:14:in `main'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-19 23:36:35 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`mobile` = '93f57323e0205dffea729add44cb702b' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`persistence_token` = BINARY '6c94e1a726e0569b5cc4fd9f3cac1431aad2e4cd1e5220d576b0c867693a398c72bc32174b45376c1685666ea109b6509c4596cd686e201e6fc4181425282faa' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `mobile`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2012-10-19 18:06:35', '14e5119cc8fc75ef121c98fcef38731d1a18d835ec844cfabfd2032a3913b03ff4044527b997e162e046b78b746c63129f21676fcf17b59f5f89f5e22384d5ed', '93f57323e0205dffea729add44cb702b', 'RQk0TZrOYNCeA5JgBPV', 'bQhdXjKPkhn7CBW7HwI', '6c94e1a726e0569b5cc4fd9f3cac1431aad2e4cd1e5220d576b0c867693a398c72bc32174b45376c1685666ea109b6509c4596cd686e201e6fc4181425282faa', '2012-10-19 18:06:35')
+  [1m[36m (47.9ms)[0m  [1mCOMMIT[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 135ms (Views: 1.8ms | ActiveRecord: 51.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (5.5ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 41ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /user_sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /sms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 00:05:58 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-20 00:06:08 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+Completed 500 Internal Server Error in 1ms
+
+TypeError (can't convert Symbol into Integer):
+  app/controllers/sms_controller.rb:10:in `[]'
+  app/controllers/sms_controller.rb:10:in `main'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-20 00:09:21 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+Completed 500 Internal Server Error in 67ms
+
+TypeError (can't convert Symbol into Integer):
+  app/controllers/sms_controller.rb:10:in `[]'
+  app/controllers/sms_controller.rb:10:in `main'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.6ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-20 00:09:40 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`mobile` = '93f57323e0205dffea729add44cb702b' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 82ms (Views: 1.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/sms/main?mobile=93f57323e0205dffea729add44cb702b&region=karnataka&key=b83967eadde633743f9f74e60b95bae8&message=register" for 127.0.0.1 at 2012-10-20 00:14:19 +0530
+Processing by SmsController#main as HTML
+  Parameters: {"mobile"=>"93f57323e0205dffea729add44cb702b", "region"=>"karnataka", "key"=>"b83967eadde633743f9f74e60b95bae8", "message"=>"register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`mobile` = '93f57323e0205dffea729add44cb702b' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 47ms (Views: 1.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (5.3ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 40ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /sms.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /sms.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /user_sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 01:07:55 +0530
+Served asset /application.js - 200 OK (3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-10-20 01:08:11 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g2Aq5/olXVe9MXIyZn0iks7V2Ctss/gqe7SFQdeaoCE=", "user"=>{"mobile"=>"9995945143", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`mobile` = '442f68f78b973952d1919d157cfd298c' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`persistence_token` = BINARY 'ff685a06d05bb320a5e655b5435b363198975e8f258342e13561df9cd82b36c2bb8fd3099a8d6a740a5ebc559832e7886bd38e6f09eb8aa6311536541ebb6531' LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`persistence_token` = '6c94e1a726e0569b5cc4fd9f3cac1431aad2e4cd1e5220d576b0c867693a398c72bc32174b45376c1685666ea109b6509c4596cd686e201e6fc4181425282faa' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`created_at`, `crypted_password`, `mobile`, `password_salt`, `perishable_token`, `persistence_token`, `updated_at`) VALUES ('2012-10-19 19:38:11', '9de47fed6638a5aed7b419161bc282ffec8a18fd7a081d8af56b2a6a77b5e87e5ee4fef2111a8ce780290a072a47a9848b60f80bea11ed3d4f23d293ca2c2794', '442f68f78b973952d1919d157cfd298c', 'oNRjk5S6LvYCwB5Pg1jN', 'piKGYFGSkztl9vPdGVBg', 'ff685a06d05bb320a5e655b5435b363198975e8f258342e13561df9cd82b36c2bb8fd3099a8d6a740a5ebc559832e7886bd38e6f09eb8aa6311536541ebb6531', '2012-10-19 19:38:11')
+  [1m[36m (45.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://dev.imsocio.com:3000/users/3
+Completed 302 Found in 74ms (ActiveRecord: 47.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-10-20 01:08:11 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `%' for {:to=>"442f68f78b973952d1919d157cfd298c"}:Hash):
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-10-20 01:09:20 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mSms Load (0.5ms)[0m  SELECT `sms`.* FROM `sms` WHERE (to = '442f68f78b973952d1919d157cfd298c')
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')):
+  app/controllers/users_controller.rb:18:in `show'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-10-20 01:10:02 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mSms Load (0.5ms)[0m  SELECT `sms`.* FROM `sms` WHERE (to = '442f68f78b973952d1919d157cfd298c')
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')
+  Rendered users/show.html.erb within layouts/application (70.6ms)
+Completed 500 Internal Server Error in 100ms
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')):
+    1: <table>
+    2: <%@messages.each do |msg|%>
+    3: <tr>
+    4:   <td>
+    5:       <%=msg.from%> 
+  app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__192673615__627091448'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.5ms)
+Connecting to database specified by database.yml
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to = '442f68f78b973952d1919d157cfd298c')' at line 1: SELECT `sms`.* FROM `sms`  WHERE (to = '442f68f78b973952d1919d157cfd298c')
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_user.html.erb (4.9ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 46ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /application.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /user_sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /sms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 01:22:25 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2012-10-20 01:22:38 +0530
+
+ActionController::RoutingError (No route matches [GET] "/user_sessions/new"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/arun/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Processing by UserSessionsController#new as HTML
+  Rendered user_sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 51ms (Views: 28.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /sms.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /user_sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-20 01:23:01 +0530
+Served asset /application.js - 304 Not Modified (5ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-21 19:03:37 +0530
+Processing by UserSessionsController#new as HTML
+  Rendered user_sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 675ms (Views: 422.7ms | ActiveRecord: 70.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /sms.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /jquery.js - 200 OK (33ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /user_sessions.css - 200 OK (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /users.css - 200 OK (2ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /sms.js - 200 OK (4ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /user_sessions.js - 200 OK (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-21 19:03:39 +0530
+Served asset /application.js - 200 OK (10ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2012-10-21 19:06:41 +0530
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bwvig3HCRS5sCM8vj6HFzrPaHID4mig706jE6oxJLAU=", "user_session"=>{"mobile"=>"7293313878", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (764.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.mobile LIKE '7293313878') LIMIT 1[0m
+  [1m[35mEXPLAIN (0.3ms)[0m  EXPLAIN SELECT `users`.* FROM `users` WHERE (`users`.mobile LIKE '7293313878') LIMIT 1
+EXPLAIN for: SELECT  `users`.* FROM `users`  WHERE (`users`.mobile LIKE '7293313878') LIMIT 1
++----+-------------+-------+------+---------------+------+---------+------+------+-------------+
+| id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra       |
++----+-------------+-------+------+---------------+------+---------+------+------+-------------+
+|  1 | SIMPLE      | users | ALL  | NULL          | NULL | NULL    | NULL |    1 | Using where |
++----+-------------+-------+------+---------------+------+---------+------+------+-------------+
+1 row in set (0.00 sec)
+
+  Rendered user_sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 1240ms (Views: 20.1ms | ActiveRecord: 764.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /user_sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /sms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-21 19:06:43 +0530
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-21 19:07:00 +0530
+Processing by UserSessionsController#new as HTML
+Completed 500 Internal Server Error in 7ms
+
+TypeError (can't convert Symbol into String):
+  app/models/user.rb:4:in `digest'
+  app/models/user.rb:4:in `hexdigest'
+  app/models/user.rb:4:in `block in <class:User>'
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/user_sessions_controller.rb:3:in `new'
+  app/controllers/user_sessions_controller.rb:3:in `new'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-21 19:07:57 +0530
+Processing by UserSessionsController#new as HTML
+Completed 500 Internal Server Error in 38ms
+
+TypeError (can't convert Symbol into String):
+  app/models/user.rb:5:in `digest'
+  app/models/user.rb:5:in `hexdigest'
+  app/models/user.rb:5:in `block in <class:User>'
+  app/models/user.rb:4:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/user_sessions_controller.rb:3:in `new'
+  app/controllers/user_sessions_controller.rb:3:in `new'
+
+
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/arun/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Processing by UserSessionsController#new as HTML
+  Rendered user_sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 32ms (Views: 18.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /user_sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /sms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-21 19:08:22 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2012-10-21 19:09:24 +0530
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bwvig3HCRS5sCM8vj6HFzrPaHID4mig706jE6oxJLAU=", "user_session"=>{"mobile"=>"442f68f78b973952d1919d157cfd298c", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.mobile LIKE '442f68f78b973952d1919d157cfd298c') LIMIT 1[0m
+  Rendered user_sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.css?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /sms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /user_sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sms.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /sms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-21 19:09:25 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml

@@ -27,7 +27,7 @@ class SmsController < ApplicationController
         @sms.save
     when "snd"
         @sender=User.find_by_mobile(params[:mobile])
-        if @sendor.present?
+        if @sender.present?
             @sms=Sms.new
             @sms.from_mobile=params[:mobile]
             @sms.to_mobile=Contact.first(:conditions=>["user_id = ? AND code = ?",@sender.id,@splitted_msg[1]])
